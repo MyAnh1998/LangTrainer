@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center mt-5">PLAXLEX</h1>
+            <form class="mt-4" action="/api/words" method="post">
+                <div class="form-group">
+                    <label for="motherLanguage">Mother language:</label>
+                    <input type="text" id="motherLanguage" name="motherLanguage" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="learningLanguage">Language you want to learn:</label>
+                    <input type="text" id="learningLanguage" name="learningLanguage" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="wordCount">Number of words:</label>
+                    <input type="number" id="wordCount" name="wordCount" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="subjects">Subjects (optional):</label>
+                    <textarea id="subjects" name="subjects" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

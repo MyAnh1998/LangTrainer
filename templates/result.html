@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Words</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center mt-5">Learning words</h1>
+      <div class="mt-4">
+        <ul class="list-group">
+          {% for word in words %}
+          <li class="list-group-item">
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                <img src="{{ word.imageLink }}" class="img-fluid" alt="Picture for {{ word.word }}">
+              </div>
+              <div class="col-md-4">
+                <h5>{{ word.word }}</h5>
+              </div>
+              <div class="col-md-4">
+                <h5>{{ word.translation }}</h5>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        <a href="/" class="btn btn-secondary btn-block mt-4">Back to start page</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
